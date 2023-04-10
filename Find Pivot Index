@@ -1,0 +1,16 @@
+public class Solution {
+    public int PivotIndex(int[] nums) {
+        int Leftsum = 0;
+        int total = nums.Sum();
+        for(int i = 0 ; i < nums.Length; i++)
+        {   
+            total -= nums[i];
+            if (total == Leftsum)
+            {
+                return i;
+            }
+            Leftsum += nums[i];
+        }
+        return -1;
+    }
+}
